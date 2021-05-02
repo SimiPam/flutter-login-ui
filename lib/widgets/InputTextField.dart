@@ -20,8 +20,6 @@ class InputTextField extends StatelessWidget {
         fillColor: Colors.white,
         filled: true,
         hintText: hint,
-        // kCorrectEmail == true ? kCircleAvatar : null
-        // Padding(padding: const EdgeInsets.all(15.0), child: kCircleAvatar)
         suffixIcon: checkIcon,
         hintStyle: Theme.of(context).textTheme.headline5,
         contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),

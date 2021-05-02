@@ -15,26 +15,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Color buttonColor = kInactiveColor;
 
-  void submit2(String value, String regexSource) {
-    bool check = false;
-    setState(() {
-      final regex = RegExp(regexSource);
-      final matches = regex.allMatches(value);
-
-      for (Match match in matches) {
-        if (match.start == 0 && match.end == value.length) {
-          check = true;
-        }
-      }
-
-      if (check) {
-        kCorrectEmail = true;
-      } else {
-        kCorrectEmail = false;
-      }
-    });
-  }
-
   Validator validator = new Validator();
 
   void submit(String value, int tog) {
@@ -88,11 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: 20,
-                  ),
-                  // InputTexts('Enter your email'),
-                  SizedBox(
-                    height: 20.0,
+                    height: 40,
                   ),
                   InputTextField(
                       hint: "Email Address",

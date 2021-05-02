@@ -27,7 +27,7 @@ TextStyle _subheading3 = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
-TextStyle _hintTextSyle = TextStyle(
+TextStyle _hintTextStyle = TextStyle(
   fontSize: 12,
   color: kInputTextColor,
   fontWeight: FontWeight.w400,
@@ -41,6 +41,6 @@ ThemeData myTheme = ThemeData.dark().copyWith(
     headline1: _heading,
     headline2: _subheading2,
     headline3: _subheading3,
-    headline5: _hintTextSyle,
+    headline5: _hintTextStyle,
   ),
 );
