@@ -4,17 +4,24 @@ import '../constants.dart';
 
 class InputTextField extends StatelessWidget {
   InputTextField(
-      {required this.hint, required this.onDiff, required this.checkIcon});
+      {required this.hint,
+      required this.onDiff,
+      required this.checkIcon,
+      required this.hideText});
 
   final String hint;
   final Function(String) onDiff;
   final Widget checkIcon;
+  final bool hideText;
 
   @override
   Widget build(BuildContext context) {
     bool check = false;
     return TextField(
       onChanged: onDiff,
+      enableSuggestions: false,
+      autocorrect: false,
+      obscureText: hideText,
       style: Theme.of(context).textTheme.headline5,
       decoration: InputDecoration(
         fillColor: Colors.white,

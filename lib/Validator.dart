@@ -20,7 +20,7 @@ class Validator {
   }
 
   bool numberValidation(String value) {
-    bool check = false;
+
     if (value.length > 8) {
       return true;
     } else {

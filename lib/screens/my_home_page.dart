@@ -77,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         submit(value, 1);
                         print(value);
                       },
+                      hideText: false,
                       checkIcon: (kCorrectEmail)
                           ? inputCheck(kActiveColor)
                           : inputCheck(Colors.white)),
@@ -90,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         submit(value, 2);
                         print(value);
                       },
+                      hideText: true,
                       checkIcon: (kCorrectPass)
                           ? inputCheck(kActiveColor)
                           : inputCheck(Colors.white)),
