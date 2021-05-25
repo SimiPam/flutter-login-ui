@@ -1,21 +1,22 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:login_app/Validator.dart';
-import 'package:login_app/colors.dart';
+import 'package:login_app/services/Validator.dart';
+import 'package:login_app/theme/colors.dart';
 import 'package:login_app/widgets/InputTextField.dart';
 
-import '../constants.dart';
-import '../sizes.dart';
+import '../theme/constants.dart';
+import '../theme/sizes.dart';
 
 bool kCorrectEmail = false;
 bool kCorrectPass = false;
 
-class MyHomePage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  Color buttonColor = AppColors.kInactiveColor;
+class _LoginPageState extends State<LoginPage> {
+  Color _buttonColor = AppColors.kInactiveColor;
 
   Validator validator = new Validator();
 
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _buttonChange() {
     setState(() {
-      buttonColor = AppColors.kActiveColor;
+      _buttonColor = AppColors.kActiveColor;
     });
   }
 
@@ -100,21 +101,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(
                     height: Sizes.dimens_20,
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: Sizes.dimens_16),
-                    child: Material(
-                      color: buttonColor,
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(Sizes.dimens_11)),
-                      elevation: Sizes.dimens_5,
-                      child: MaterialButton(
-                        onPressed: _buttonChange,
-                        child: Text(
-                          'Sign In',
-                        ),
-                      ),
-                    ),
-                  ),
+                  buttonWidget(
+                      buttonAction: _buttonChange,
+                      buttonColor: _buttonColor,
+                      buttonText: "Sign In"),
                   Text(
                     'Forgot Password?',
                     style: Theme.of(context).textTheme.headline2,
@@ -123,11 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   SizedBox(
                     height: Sizes.dimens_10,
                   ),
-                  Text(
-                    "Reset Password",
-                    style: Theme.of(context).textTheme.headline3,
-                    textAlign: TextAlign.center,
-                  ),
+                  bottomText(
+                      context: context,
+                      firstText: 'Don\'t have an account?',
+                      secondText: ' Sign up'),
                 ],
               ),
             ),

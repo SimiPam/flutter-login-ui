@@ -1,6 +1,6 @@
-import 'package:login_app/sizes.dart';
+import 'package:login_app/theme/sizes.dart';
 
-import 'constants.dart';
+import '../theme/constants.dart';
 
 class Validator {
   bool emailValidation(String value) {

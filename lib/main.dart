@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/screens/my_home_page.dart';
-import 'package:login_app/style.dart';
+import 'package:login_app/screens/login_screen.dart';
+import 'package:login_app/screens/registeration_screen.dart';
+import 'package:login_app/theme/style.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: myTheme,
-      home: MyHomePage(),
+      home: OnboardingPage(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/colors.dart';
-import 'package:login_app/sizes.dart';
+import 'package:login_app/theme/colors.dart';
+import 'package:login_app/theme/sizes.dart';
 
 import 'constants.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/colors.dart';
-import 'package:login_app/screens/my_home_page.dart';
-import '../constants.dart';
-import '../sizes.dart';
+import 'package:login_app/theme/colors.dart';
+import 'package:login_app/screens/login_screen.dart';
+import '../theme/constants.dart';
+import '../theme/sizes.dart';
 
 class InputTextField extends StatelessWidget {
   InputTextField(
@@ -19,7 +19,7 @@ class InputTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool check = false;
-    return TextField(
+    return TextFormField(
       onChanged: onDiff,
       enableSuggestions: false,
       autocorrect: false,
