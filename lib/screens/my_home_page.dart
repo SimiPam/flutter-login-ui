@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/Validator.dart';
+import 'package:login_app/colors.dart';
 import 'package:login_app/widgets/InputTextField.dart';
 
 import '../constants.dart';
+import '../sizes.dart';
 
 bool kCorrectEmail = false;
 bool kCorrectPass = false;
@@ -13,19 +15,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color buttonColor = kInactiveColor;
+  Color buttonColor = AppColors.kInactiveColor;
 
   Validator validator = new Validator();
 
   void submit(String value, int tog) {
     setState(() {
-      if (tog == 1) {
+      if (tog == Sizes.dimens_1) {
         if (validator.emailValidation(value)) {
           kCorrectEmail = true;
         } else {
           kCorrectEmail = false;
         }
-      } else if (tog == 2) {
+      } else if (tog == Sizes.dimens_2) {
         if (validator.numberValidation(value)) {
           kCorrectPass = true;
         } else {
@@ -37,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _buttonChange() {
     setState(() {
-      buttonColor = kActiveColor;
+      buttonColor = AppColors.kActiveColor;
     });
   }
 
@@ -49,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Padding(
             padding: const EdgeInsets.all(34.0),
             child: Container(
-              margin: EdgeInsets.symmetric(vertical: 60),
+              margin: EdgeInsets.symmetric(vertical: Sizes.dimens_60),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -60,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: 80,
+                    height: Sizes.dimens_80,
                   ),
                   Text(
                     "WELCOME BACK",
@@ -68,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: 40,
+                    height: Sizes.dimens_40,
                   ),
                   InputTextField(
                       hint: "Email Address",
@@ -79,11 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       hideText: false,
                       checkIcon: (kCorrectEmail)
-                          ? inputCheck(kActiveColor)
-                          : inputCheck(Colors.white)),
+                          ? inputCheck(AppColors.kActiveColor)
+                          : inputCheck(AppColors.whiteColor)),
                   // checkIcon: (kCorrectEmail) ? kCircleAvatar : kNoCircleAvatar),
                   SizedBox(
-                    height: 20,
+                    height: Sizes.dimens_20,
                   ),
                   InputTextField(
                       hint: "Password",
@@ -93,17 +95,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       hideText: true,
                       checkIcon: (kCorrectPass)
-                          ? inputCheck(kActiveColor)
-                          : inputCheck(Colors.white)),
+                          ? inputCheck(AppColors.kActiveColor)
+                          : inputCheck(AppColors.whiteColor)),
                   SizedBox(
-                    height: 20,
+                    height: Sizes.dimens_20,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16.0),
+                    padding: EdgeInsets.symmetric(vertical: Sizes.dimens_16),
                     child: Material(
                       color: buttonColor,
-                      borderRadius: BorderRadius.all(Radius.circular(11.0)),
-                      elevation: 5.0,
+                      borderRadius:
+                          BorderRadius.all(Radius.circular(Sizes.dimens_11)),
+                      elevation: Sizes.dimens_5,
                       child: MaterialButton(
                         onPressed: _buttonChange,
                         child: Text(
@@ -118,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: 10,
+                    height: Sizes.dimens_10,
                   ),
                   Text(
                     "Reset Password",

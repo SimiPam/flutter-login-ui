@@ -1,41 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/colors.dart';
+import 'package:login_app/sizes.dart';
 
 import 'constants.dart';
 
 TextStyle _subheading = TextStyle(
-  fontSize: 11,
-  color: Colors.white,
+  fontSize: Sizes.dimens_11,
+  color: AppColors.whiteColor,
   fontWeight: FontWeight.w500,
-  letterSpacing: 1.2,
+  letterSpacing: Sizes.dimens_1_2,
 );
 
 TextStyle _heading = TextStyle(
-  fontSize: 16,
-  color: Colors.white,
+  fontSize: Sizes.dimens_16,
+  color: AppColors.whiteColor,
   fontWeight: FontWeight.w700,
 );
 
 TextStyle _subheading2 = TextStyle(
-  fontSize: 10,
-  color: Colors.white,
+  fontSize: Sizes.dimens_10,
+  color: AppColors.whiteColor,
   fontWeight: FontWeight.w400,
 );
 
 TextStyle _subheading3 = TextStyle(
-  fontSize: 10,
-  color: kActiveColor,
+  fontSize: Sizes.dimens_10,
+  color: AppColors.kActiveColor,
   fontWeight: FontWeight.w700,
 );
 
 TextStyle _hintTextStyle = TextStyle(
-  fontSize: 12,
-  color: kInputTextColor,
+  fontSize: Sizes.dimens_12,
+  color: AppColors.kInputTextColor,
   fontWeight: FontWeight.w400,
 );
 
 ThemeData myTheme = ThemeData.dark().copyWith(
-  accentColor: Colors.blue,
-  scaffoldBackgroundColor: Color(0xFF121421),
+  accentColor: AppColors.blueColor,
+  scaffoldBackgroundColor: AppColors.scaffoldColor,
   textTheme: TextTheme(
     headline4: _subheading,
     headline1: _heading,

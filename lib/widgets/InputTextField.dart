@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/colors.dart';
 import 'package:login_app/screens/my_home_page.dart';
 import '../constants.dart';
+import '../sizes.dart';
 
 class InputTextField extends StatelessWidget {
   InputTextField(
@@ -24,19 +26,20 @@ class InputTextField extends StatelessWidget {
       obscureText: hideText,
       style: Theme.of(context).textTheme.headline5,
       decoration: InputDecoration(
-        fillColor: Colors.white,
+        fillColor: AppColors.whiteColor,
         filled: true,
         hintText: hint,
         suffixIcon: checkIcon,
         hintStyle: Theme.of(context).textTheme.headline5,
-        contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        contentPadding: EdgeInsets.symmetric(
+            vertical: Sizes.dimens_10, horizontal: Sizes.dimens_20),
         border: OutlineInputBorder(
           borderSide: BorderSide(width: 0),
-          borderRadius: BorderRadius.all(Radius.circular(11.0)),
+          borderRadius: BorderRadius.all(Radius.circular(Sizes.dimens_11)),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 0),
-          borderRadius: BorderRadius.all(Radius.circular(11.0)),
+          borderRadius: BorderRadius.all(Radius.circular(Sizes.dimens_11)),
         ),
       ),
     );

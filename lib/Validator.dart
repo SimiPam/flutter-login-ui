@@ -1,3 +1,5 @@
+import 'package:login_app/sizes.dart';
+
 import 'constants.dart';
 
 class Validator {
@@ -20,8 +22,7 @@ class Validator {
   }
 
   bool numberValidation(String value) {
-
-    if (value.length > 8) {
+    if (value.length > Sizes.dimens_8) {
       return true;
     } else {
       return false;
